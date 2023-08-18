@@ -1,0 +1,20 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: obwallet/obrpc
+plugins:
+  - name: go-grpc
+    opt: paths=source_relative
+    out: obrpc
+    protoc_path: ~/1tools/protoc23.4/bin/protoc
+  - name: go
+    opt: paths=source_relative
+    out: obrpc/
+  - name: dart
+    opt: grpc
+#    opt: paths=source_relative
+    out: proto/gen-dart
+#  - name: connect-go
+#    out: obrpc/gen
+#    opt: paths=source_relative
